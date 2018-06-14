@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 
-namespace CsharpHttpHelper.Helper
+
+namespace CsharpHttpHelper.CsharpHttpHelper.Helper
 {
 	internal static class HttpCookieHelper
 	{

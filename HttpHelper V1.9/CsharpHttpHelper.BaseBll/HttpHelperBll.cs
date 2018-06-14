@@ -1,10 +1,10 @@
+using System.Drawing;
 using CsharpHttpHelper.Base;
 using CsharpHttpHelper.Enum;
 using CsharpHttpHelper.Helper;
-using System;
-using System.Drawing;
 
-namespace CsharpHttpHelper.BaseBll
+
+namespace CsharpHttpHelper.CsharpHttpHelper.BaseBll
 {
 	internal class HttpHelperBll
 	{

@@ -1,4 +1,3 @@
-using CsharpHttpHelper.BaseBll;
 using CsharpHttpHelper.Helper;
 using CsharpHttpHelper.Item;
 using System;
@@ -7,6 +6,9 @@ using System.Collections.Specialized;
 using System.Drawing;
 using System.Net;
 using System.Text;
+using CsharpHttpHelper.CsharpHttpHelper.BaseBll;
+using CsharpHttpHelper.CsharpHttpHelper.Helper;
+
 
 namespace CsharpHttpHelper
 {
