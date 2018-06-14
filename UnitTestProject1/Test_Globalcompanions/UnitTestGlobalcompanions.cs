@@ -300,7 +300,7 @@ namespace UnitTestProject1.Test_Globalcompanions
                         URL = "http://www.globalcompanions.com/default.aspx",
                         Referer = "http://www.globalcompanions.com/",
                         Allowautoredirect = true,
-                        AutoRedirectCookie = true,
+                        //AutoRedirectCookie = true,
                         Method = "POST",
                         Header = header,
                         Postdata = pararm.ToPostData(),
