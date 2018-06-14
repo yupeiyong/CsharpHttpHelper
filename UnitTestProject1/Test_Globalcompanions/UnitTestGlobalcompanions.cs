@@ -27,7 +27,7 @@ namespace UnitTestProject1.Test_Globalcompanions
                 var ladie = new OrientLadie();
                 ladie.UserName = "1352091";
                 ladie.Password = "888";
-                ladie.Login();
+                ladie.Login2();
             }
 
 
@@ -130,19 +130,9 @@ namespace UnitTestProject1.Test_Globalcompanions
 
             public bool IsLogined { get; set; }
 
-            public bool IsSending { get; set; }
-
-            public bool Operating { get; set; }
-
             public string Cookie { get; set; }
 
             public string Id { get; set; }
-
-            public string Name { get; set; }
-
-            public int nIndex { get; set; }
-
-            public DateTime LastSendMsgFailedTime { get; set; }
 
 
             private string GetLoginResult(string html)
