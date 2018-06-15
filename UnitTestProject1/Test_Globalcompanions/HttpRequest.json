@@ -1,0 +1,56 @@
+﻿[
+  {
+    "_HttpRequestHeaders": [ "Accept-Language", "Accept-Encoding", "Accept", "Content-Type", "User-Agent", "Cookie", "Referer", "Host", "Content-Length", "Expect" ],
+    "_Proxy": null,
+    "_KeepAlive": true,
+    "_Pipelined": true,
+    "_AllowAutoRedirect": false,
+    "_AllowWriteStreamBuffering": true,
+    "_HttpWriteMode": 1,
+    "_MaximumAllowedRedirections": 50,
+    "_AutoRedirects": 0,
+    "_Timeout": 100000,
+    "_ReadWriteTimeout": 30000,
+    "_MaximumResponseHeadersLength": 64,
+    "_ContentLength": 11297,
+    "_MediaType": null,
+    "_OriginVerb": { },
+    "_ConnectionGroupName": null,
+    "_Version": {
+      "Major": 1,
+      "Minor": 1,
+      "Build": -1,
+      "Revision": -1,
+      "MajorRevision": -1,
+      "MinorRevision": -1
+    },
+    "_OriginUri": "http://www.globalcompanions.com/Login/Home.aspx"
+  },
+  {
+    "_HttpRequestHeaders": [ "Accept-Language", "Accept-Encoding", "Accept", "Content-Type", "User-Agent", "Referer", "Host", "Content-Length", "Expect" ],
+    "_Proxy": null,
+    "_KeepAlive": true,
+    "_Pipelined": true,
+    "_AllowAutoRedirect": false,
+    "_AllowWriteStreamBuffering": true,
+    "_HttpWriteMode": 1,
+    "_MaximumAllowedRedirections": 50,
+    "_AutoRedirects": 0,
+    "_Timeout": 100000,
+    "_ReadWriteTimeout": 30000,
+    "_MaximumResponseHeadersLength": 64,
+    "_ContentLength": 11297,
+    "_MediaType": null,
+    "_OriginVerb": { },
+    "_ConnectionGroupName": null,
+    "_Version": {
+      "Major": 1,
+      "Minor": 1,
+      "Build": -1,
+      "Revision": -1,
+      "MajorRevision": -1,
+      "MinorRevision": -1
+    },
+    "_OriginUri": "http://www.globalcompanions.com/default.aspx"
+  }
+]

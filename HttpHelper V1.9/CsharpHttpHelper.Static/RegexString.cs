@@ -4,7 +4,7 @@ namespace CsharpHttpHelper.Static
 {
 	internal class RegexString
 	{
-		internal static readonly string Alist = "<a[\\s\\S]+?href[=\"']([\\s\\S]+?)[\"'\\s+][\\s\\S]+?>([\\s\\S]+?)</a>";
+		internal static readonly string Alist = "<a[\\s\\S]+?href[=\"']([\\s\\S]+?)[\"'\\s+][\\s\\S]*?>([\\s\\S]+?)</a>";
 
 		internal static readonly string ImgList = "<img[\\s\\S]*?src=[\"']([\\s\\S]*?)[\"'][\\s\\S]*?>([\\s\\S]*?)>";
 

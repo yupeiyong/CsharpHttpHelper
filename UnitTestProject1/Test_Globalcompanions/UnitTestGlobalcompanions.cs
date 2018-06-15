@@ -5,7 +5,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using CsharpHttpHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using Newtonsoft.Json;
+using HttpHelper = CsharpHttpHelper.HttpHelper;
 
 namespace UnitTestProject1.Test_Globalcompanions
 {
@@ -34,7 +35,7 @@ namespace UnitTestProject1.Test_Globalcompanions
             [TestMethod]
             public void Test_Home_Is_Allowautoredirect()
             {
-                var helper = new HttpHelper();
+                var helper = new  HttpHelper();
                 var str = "http://www.globalcompanions.com/";
 
                 var header = new WebHeaderCollection();
@@ -190,8 +191,8 @@ namespace UnitTestProject1.Test_Globalcompanions
                     var item = new HttpItem
                     {
                         URL = str,
-                        Allowautoredirect = false,
-                        AutoRedirectCookie = false
+                        Allowautoredirect = true,
+                        AutoRedirectCookie = true
                     };
 
                     var result = helper.GetHtml(item);
@@ -224,6 +225,8 @@ namespace UnitTestProject1.Test_Globalcompanions
                     request.CookieContainer = c;
                     requestStream.Write(pBuffers, 0, pBuffers.Length);
                     requestStream.Close();
+
+                    var requestStr = JsonConvert.SerializeObject(request,new JsonSerializerSettings {MaxDepth = 6});
 
                     var response = (HttpWebResponse) request.GetResponse();
                     if (response.StatusCode != HttpStatusCode.OK)
@@ -272,8 +275,6 @@ namespace UnitTestProject1.Test_Globalcompanions
                     var helper = new HttpHelper();
                     var str = "http://www.globalcompanions.com/";
 
-                    var header = new WebHeaderCollection();
-                    header.Add("Accept-Encoding:gzip,deflate");
                     var item = new HttpItem
                     {
                         URL = str,
@@ -295,19 +296,28 @@ namespace UnitTestProject1.Test_Globalcompanions
                     pararm.ctl00_Header_cntrlLogin_txtBoxLogin = UserName;
                     pararm.ctl00_Header_cntrlLogin_txtBoxPassword = Password;
 
+                    var header = new WebHeaderCollection();
+                    header.Add("Accept-Language:zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2");
+                    header.Add("Accept-Encoding:gzip,deflate");
                     item = new HttpItem
                     {
                         URL = "http://www.globalcompanions.com/default.aspx",
                         Referer = "http://www.globalcompanions.com/",
-                        Allowautoredirect = true,
-                        //AutoRedirectCookie = true,
+                        Allowautoredirect = false,
+                        AutoRedirectCookie = false,
+                        Host= "www.globalcompanions.com",
                         Method = "POST",
                         Header = header,
                         Postdata = pararm.ToPostData(),
                         Cookie = result.Cookie,
+                        Accept= "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
                         UserAgent = "Mozilla/5.0 (compatible;Windows NT 6.1; WOW64;Trident/6.0;MSIE 9.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.27 Safari/537.36",
                         ContentType = "application/x-www-form-urlencoded"
                     };
+                    result = helper.GetHtml(item);
+
+                    item.URL = result.RedirectUrl;
+                    item.Cookie = result.Cookie;
                     result = helper.GetHtml(item);
                     if (result.StatusCode != HttpStatusCode.OK)
                     {
