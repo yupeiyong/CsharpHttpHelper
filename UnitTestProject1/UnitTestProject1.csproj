@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="TestFluentHttphelper\FluentHttpHelper.cs" />
     <Compile Include="TestFluentHttphelper\UnitTest1.cs" />
+    <Compile Include="TestStatuCode\UnitTestStatuCode.cs" />
     <Compile Include="Test_Globalcompanions\DataEncode.cs" />
     <Compile Include="Test_Globalcompanions\LoginParam.cs" />
     <Compile Include="Test_Globalcompanions\UnitTestGlobalcompanions.cs" />
@@ -77,6 +78,7 @@
       <Name>HttpHelper</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
