@@ -66,6 +66,7 @@
     <Compile Include="Test_Globalcompanions\UnitTestGlobalcompanions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test_Site_Budget\UnitTestLogin.cs" />
+    <Compile Include="Test_XunProxy\UnitTestGetIpRes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -76,6 +77,10 @@
     <ProjectReference Include="..\HttpHelper V1.9\HttpHelper.csproj">
       <Project>{cff03980-4269-408c-b59b-414994c40621}</Project>
       <Name>HttpHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proxy\Proxy.csproj">
+      <Project>{C23C3FD1-AC08-4B29-9F94-075CD9E97946}</Project>
+      <Name>Proxy</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
