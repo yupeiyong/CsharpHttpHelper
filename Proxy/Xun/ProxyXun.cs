@@ -54,13 +54,22 @@ namespace Proxy.Xun
             request.Proxy = new WebProxy(XunProxyIp, XunProxyPort);
         }
 
-        public static bool Check(string orderNo, string secret,out string error)
+        /// <summary>
+        ///     检查代理订单号secret密码
+        ///     返回true可以使用此代理，否则不能使用
+        /// </summary>
+        /// <param name="orderNo"></param>
+        /// <param name="secret"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
+        public static bool Check(string orderNo, string secret, out string error)
         {
             error = string.Empty;
             var httpItem = new HttpItem
             {
                 URL = "http://www.xdaili.cn/"
             };
+            httpItem.SetXunDynamicProxy(orderNo, secret);
             var helper = new HttpHelper();
             var result = helper.GetHtml(httpItem);
             var content = result.Html;
@@ -70,13 +79,14 @@ namespace Proxy.Xun
                 var res = JsonConvert.DeserializeObject<XunResponse>(content);
                 var msg = res.msg.Trim();
                 if (_responseErrors.ContainsKey(msg))
-                    error= _responseErrors[msg];
+                    error = _responseErrors[msg];
 
-                return true;
+                //能序列化，说明返回了json格式的错误信息
+                return false;
             }
             catch (Exception ex)
             {
-                return false;
+                return true;
             }
         }
 

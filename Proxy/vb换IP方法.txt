@@ -1,0 +1,3 @@
+﻿宽带重拨
+ShellWait Shell("rasdial /d", vbHide)   '宽带断开连接
+ShellWait Shell("rasdial " & GetAdslName & " " & zh & " " & mm, vbHide)   'rasdial 宽带连接 宽带连接账号 宽带连接密码
